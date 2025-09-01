@@ -8,8 +8,8 @@ applications:
   env: dr
   name: backbase
   valueFiles:
-    - repository: 'https://github.com/albertchisorot/sb24-prod-bb-values.git'
+    - repository: 'https://github.com/albertchisorot/sb24-prod-bb-values'
       path: /bb-apps-prod.yaml
-    - repository: 'https://github.com/albertchisorot/sb24-prod-bb-values.git'
+    - repository: 'https://github.com/albertchisorot/sb24-prod-bb-values'
       path: /bb-apps-dr.yaml
 
