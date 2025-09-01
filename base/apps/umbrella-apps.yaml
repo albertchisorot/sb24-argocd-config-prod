@@ -22,7 +22,7 @@ spec:
       targetRevision: 0.0.9
     - ref: values
       repoURL: >-
-        https://tools.standardbank.co.za/bitbucket/scm/aomb/sb24-argocd-config-prod.git
+        https://github.com/albertchisorot/sb24-argocd-config-prod.git
       targetRevision: master
   syncPolicy:
     retry:
