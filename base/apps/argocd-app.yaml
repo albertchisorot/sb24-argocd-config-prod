@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-app
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: argocd
+  source:
+    repoURL: https://github.com/albertchisorot/sb24-argocd-config-prod.git
+    targetRevision: master
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argo-cd

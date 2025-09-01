@@ -1,0 +1,9 @@
+- op: remove
+  path: /data/default-route-openshift-image-registry.apps.cluster-apps-prd.ao.sbicdirectory.com
+
+- op: add
+  path: /data/registry.apps.cluster-sbao-dr.standardbank.co.ao
+  value: |-
+    -----BEGIN CERTIFICATE-----
+    <DR CERT HERE>
+    -----END CERTIFICATE-----

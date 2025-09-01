@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: sb24-bb-platform-cicd-values
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  name: sb24-bb-platform-cicd-values
+  type: git
+  insecure: "true"
+  url: https://tools.standardbank.co.za/bitbucket/scm/aomb/sb24-bb-platform-cicd-values.git

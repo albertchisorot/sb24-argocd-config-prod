@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-image-updater-config
+data:
+  # log.level can be one of trace, debug, info, warn or error
+  # default: info
+  #log.level: debug
+  registries.conf: |
+    registries:
+    - name: "Local Registry"
+      prefix: image-registry.standardbank.co.ao
+      api_url: https://image-registry.standardbank.co.ao
+      credentials: secret:argocd/argocd-docker-creds#creds
+      insecure: true
+      default: true
+
+      # name: "Local Registry"
+      # prefix: image-registry.standardbank.co.ao/sb24/dev
+      # api_url: image-registry.standardbank.co.ao
+      # credentials: secret:argocd/argocd-docker-creds#creds
+      # insecure: yes
+      # default: true
+
+    # - name: Docker Hub
+    #   prefix: docker.io
+    #   api_url: https://registry-1.docker.io
+    #   credentials: secret:foo/bar#creds
+    #   defaultns: library
+    #   default: true
+    # - name: RedHat Quay
+    #   api_url: https://quay.io
+    #   prefix: quay.io
+    #   insecure: yes
+    #   credentials: env:REGISTRY_SECRET

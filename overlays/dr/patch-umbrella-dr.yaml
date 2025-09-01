@@ -1,0 +1,6 @@
+- op: add
+  path: /spec/sources/0/helm/valueFiles/-
+  value: $values/base/umbrella-values/umbrella-app-values-dr.yaml
+- op: replace
+  path: /spec/sources/0/repoURL
+  value: registry.apps.cluster-sbao-dr.standardbank.co.ao

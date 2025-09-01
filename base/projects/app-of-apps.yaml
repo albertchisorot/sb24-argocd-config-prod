@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: app-of-apps
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: App of Apps Project
+  destinations:
+    - namespace: argo-cd
+      server: 'https://kubernetes.default.svc'
+  namespaceResourceWhitelist:
+    - group: argoproj.io
+      kind: Application
+    - group: argoproj.io
+      kind: AppProject
+  sourceRepos:
+    - default-route-openshift-image-registry.apps.cluster-apps-prd.ao.sbicdirectory.com
+    - https://github.com/albertchisorot/sb24-argocd-config-prod.git
+    - https://github.com/albertchisorot/sb24-prod-bb-values.git
+
+

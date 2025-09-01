@@ -1,0 +1,3 @@
+- op: replace
+  path: /stringData/url
+  value: registry.apps.cluster-sbao-dr.standardbank.co.ao

@@ -1,0 +1,15 @@
+chart:
+  prefix: 'newsb24/'
+  version: 0.0.17
+  repoURL: 'registry.apps.cluster-sbao-dr.standardbank.co.ao'
+  namespace: argo-cd
+applications:
+- region: sb24
+  env: dr
+  name: backbase
+  valueFiles:
+    - repository: 'https://github.com/albertchisorot/sb24-prod-bb-values.git'
+      path: /bb-apps-prod.yaml
+    - repository: 'https://github.com/albertchisorot/sb24-prod-bb-values.git'
+      path: /bb-apps-dr.yaml
+

@@ -1,0 +1,3 @@
+- op: replace
+  path: /spec/sourceRepos/0
+  value: registry.apps.cluster-sbao-dr.standardbank.co.ao

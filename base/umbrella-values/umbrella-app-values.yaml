@@ -1,0 +1,13 @@
+chart:
+  prefix: 'newsb24/'
+  version: 0.0.17
+  repoURL: 'default-route-openshift-image-registry.apps.cluster-apps-prd.ao.sbicdirectory.com'
+  namespace: argo-cd
+applications:
+- region: sb24
+  env: prod
+  name: backbase
+  valueFiles:
+    - repository: 'https://tools.standardbank.co.za/bitbucket/scm/aomb/sb24-prod-bb-values'
+      path: /bb-apps-prod.yaml
+

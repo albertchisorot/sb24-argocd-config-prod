@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: umbrella-apps-sb24prod
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    app: umbrella-apps
+    env: prod
+    region: sb24
+spec:
+  destination:
+    namespace: argo-cd
+    server: 'https://kubernetes.default.svc'
+  project: app-of-apps
+  sources:
+    - chart: newsb24/umbrella-app-of-apps
+      helm:
+        valueFiles:
+          - $values/base/umbrella-values/umbrella-app-values.yaml
+      repoURL: default-route-openshift-image-registry.apps.cluster-apps-prd.ao.sbicdirectory.com
+      targetRevision: 0.0.9
+    - ref: values
+      repoURL: >-
+        https://tools.standardbank.co.za/bitbucket/scm/aomb/sb24-argocd-config-prod.git
+      targetRevision: master
+  syncPolicy:
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+      limit: 3

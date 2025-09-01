@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: ArgoCD Self Project
+  # Allow manifests to deploy from any Git repos
+  sourceRepos:
+  - https://tools.standardbank.co.za/bitbucket/scm/aomb/sb24-argocd-config-prod.git
+  # Only permit applications to deploy to the guestbook namespace in the same cluster
+  destinations:
+  - namespace: argo-cd
+    server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  
