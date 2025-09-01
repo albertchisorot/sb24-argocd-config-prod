@@ -8,6 +8,6 @@ applications:
   env: prod
   name: backbase
   valueFiles:
-    - repository: 'https://tools.standardbank.co.za/bitbucket/scm/aomb/sb24-prod-bb-values'
+    - repository: 'https://github.com/albertchisorot/sb24-prod-bb-values'
       path: /bb-apps-prod.yaml
 
