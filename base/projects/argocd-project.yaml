@@ -8,7 +8,7 @@ spec:
   description: ArgoCD Self Project
   # Allow manifests to deploy from any Git repos
   sourceRepos:
-  - https://tools.standardbank.co.za/bitbucket/scm/aomb/sb24-argocd-config-prod.git
+  - https://github.com/albertchisorot/sb24-argocd-config-prod.git
   # Only permit applications to deploy to the guestbook namespace in the same cluster
   destinations:
   - namespace: argo-cd
